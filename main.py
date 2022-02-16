@@ -24,7 +24,7 @@ def time_to_seconds(time):
 
 
 
-@bot.on_message(filters.command & filters.private(['start']))
+@bot.on_message(filters.command("start"))
 def start(client, message):
     Ytdl_Bot = f"👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\nI'm Song Finder[🎶](https://telegra.ph/file/34e13355f6753772d4e3f.mp4)\n\nSend the name of the song you want... 😍🥰🤗\n\nType /song song name\n\n𝐄𝐠. `/song Faded`"
     message.reply_text(
