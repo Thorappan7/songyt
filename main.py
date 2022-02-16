@@ -9,7 +9,7 @@ from youtube_search import YoutubeSearch
 import requests
 
 import os
-from config import Config
+from Config import Config
 
 bot = Client(
     'YouTubeSongDownloader',
