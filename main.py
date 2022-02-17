@@ -1,12 +1,10 @@
-
 from pyrogram import Client, filters
-from pyrogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup
-)
+from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
+
 import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
+from yt_dlp import YoutubeDL
 
 import os
 from Config import Config
@@ -81,26 +79,36 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("Processing [🚀](https://telegra.ph/file/60b0489093120e762861f.mp4)")
+    m.edit("Processing")
     try:
-        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎧 𝐓𝐢𝐭𝐥𝐞 : [{title[:35]}]({link})\n⏳ 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 : `{duration}`\n🎬 𝐒𝐨𝐮𝐫𝐜𝐞 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n👁‍🗨 𝐕𝐢𝐞𝐰𝐬 : `{views}`\n\n💌 @Malayalam_Music'
-        secmul, dur, dur_arr = 1, 0, duration.split(':')
-        for i in range(len(dur_arr)-1, -1, -1):
-            dur += (int(dur_arr[i]) * secmul)
+        rep = f"🎵 Sᴏɴɢ Uᴘʟᴏᴀᴅᴇᴅ ғʀᴏᴍ YᴏᴜTᴜʙᴇ Mᴜsɪᴄ..!.\n\nPᴏᴡᴇʀᴇᴅ ʙʏ [{bat}](https://t.me/{Config.bn})"
+        secmul, dur, dur_arr = 1, 0, duration.split(":")
+        for i in range(len(dur_arr) - 1, -1, -1):
+            dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
+        m.edit("📤 υρℓσα∂ιиg fιℓє тσ тєℓєgяαм...")
+        message.reply_audio(
+            audio_file,
+            caption=rep,
+            thumb=thumb_name,
+            parse_mode="md",
+            title=title,
+            duration=dur,
+        )
         m.delete()
     except Exception as e:
-        m.edit('❌ 𝐄𝐫𝐫𝐨𝐫')
+        m.edit("❌ Error Contact support Group") 
         print(e)
+
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
 
 bot.run()
