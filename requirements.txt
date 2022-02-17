@@ -4,3 +4,4 @@ youtube-dl
 youtube_search
 requests
 ffmpeg
+yt_dlp
