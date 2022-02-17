@@ -25,9 +25,10 @@ def time_to_seconds(time):
 
 @bot.on_message(filters.command("start"))
 def start(client, message):
-    Ytdl_Bot = f"👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\nI'm Song Finder[🎶](https://telegra.ph/file/34e13355f6753772d4e3f.mp4)\n\nSend the name of the song you want... 😍🥰🤗\n\nType /song song name\n\n𝐄𝐠. `/song Faded`"
-    message.reply_text(
-        text=Ytdl_Bot, 
+    Ytdl_Bot = f"👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\nI'm an advanced Song Finder Bot\nCheck my buttons below to know more..\n"
+    client.send_photo(
+        photo="https://telegra.ph/file/c91e170af27dead097415.jpg",
+        caption=Ytdl_Bot, 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
@@ -42,7 +43,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 𝐭𝐡𝐞 𝐬𝐨𝐧𝐠...')
+    m = message.reply("Searching..🧐")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -80,18 +81,18 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("Processing")
+    m.edit("Processing 📥")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"🎵 Sᴏɴɢ Uᴘʟᴏᴀᴅᴇᴅ ғʀᴏᴍ YᴏᴜTᴜʙᴇ Mᴜsɪᴄ..!.\n\n)"
+        rep = f"• Title[{title[:35]}]\n• Duration :{duration} \n•Upload By : @Malayalam_Music)"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("📤 υρℓσα∂ιиg fιℓє тσ тєℓєgяαм...")
+        m.edit("Uploading..📤")
         message.reply_audio(
             audio_file,
             caption=rep,
