@@ -26,7 +26,7 @@ def time_to_seconds(time):
 @bot.on_message(filters.command("start"))
 def start(client, message):
     Ytdl_Bot = f"👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\nI'm an advanced Song Finder Bot\nCheck my buttons below to know more..\n"
-    client.send_photo(
+    client.send_photo(message.chat.id,
         photo="https://telegra.ph/file/c91e170af27dead097415.jpg",
         caption=Ytdl_Bot,  
         parse_mode='html',
