@@ -28,8 +28,7 @@ def start(client, message):
     Ytdl_Bot = f"👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\nI'm an advanced Song Finder Bot\nCheck my buttons below to know more..\n"
     client.send_photo(
         photo="https://telegra.ph/file/c91e170af27dead097415.jpg",
-        caption=Ytdl_Bot, 
-        caption=text,  
+        caption=Ytdl_Bot,  
         parse_mode='html',
         reply_markup=InlineKeyboardMarkup(
             [[
