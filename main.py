@@ -29,7 +29,8 @@ def start(client, message):
     client.send_photo(
         photo="https://telegra.ph/file/c91e170af27dead097415.jpg",
         caption=Ytdl_Bot, 
-        quote=False,
+        caption=text,  
+        parse_mode='html',
         reply_markup=InlineKeyboardMarkup(
             [[
               InlineKeyboardButton('Channel 👬', url='https://t.me/Malayalam_Music'),
