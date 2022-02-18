@@ -36,7 +36,7 @@ def start(client, message):
             InlineKeyboardButton("Help", callback_data="help"),
             InlineKeyboardButton("About", callback_data="about")
             ],[
-            InlineKeyboardButton("Channel", url="https://t.me/Malayalam_music),
+            InlineKeyboardButton("Channel", url="https://t.me/malayalam_music"),
             InlineKeyboardButton("Close", callback_data="close_data")
             ]]
         )
