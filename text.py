@@ -23,3 +23,14 @@ just send me /song and [song name] like this, then bot will replay an example be
     REP_TXT = """✒ Title : {title[:35]}\n✒ Duration : {duration} \n✒ Uploaded By : <a href="https://t.me/katy_perry_musicbot"> Katy Perry </a>
 """
        
+    EG_TXT = """
+Examples 
+==========================
+
+/song darshana Hridayam
+/song alone marshmallow
+/song Arabic Kuthu
+/song thee minnal
+
+==========================
+"""
