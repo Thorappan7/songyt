@@ -101,7 +101,7 @@ def a(client, message):
             caption=Text.REP_TXT.format(message.from_user.mention),
             thumb=thumb_name,
             parse_mode="md",
-            title=title,
+            title=results[0]["title"],
             duration=dur
         )
         m.delete()
