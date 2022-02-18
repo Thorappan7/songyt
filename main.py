@@ -103,7 +103,7 @@ def a(client, message):
             audio_file,
             caption=rep.format(message.from_user.mention),
             thumb=thumb_name,
-            parse_mode="md",
+            parse_mode="markdown",
             title=title,
             duration=dur
         )
