@@ -61,6 +61,7 @@ def a(client, message):
         try:
             link = f"https://youtube.com{results[0]['url_suffix']}"
             # print(results)
+
             title = results[0]["title"]
             thumbnail = results[0]["thumbnails"][0]
             duration = results[0]["duration"]
@@ -100,7 +101,7 @@ def a(client, message):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         m.edit("Uploading..📤")
-        message.reply_audio(message.chat.id,
+        message.reply_audio(
             audio_file,
             caption=rep,
             thumb=thumb_name,
