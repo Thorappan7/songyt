@@ -26,7 +26,7 @@ def time_to_seconds(time):
 
 @bot.on_message(filters.command("start"))
 def start(client, message):
-    Ytdl_Bot = f"👋 𝗛𝗲𝗹𝗹𝗼 @{message.from_user.username}\n\nI'm an advanced Song Finder Bot\nCheck my buttons below to know more..\n"
+    Ytdl_Bot = f"👋 Hello {message.from_user.username}\n\nI'm an advanced Song Finder Bot exclusively made for Malayalam Music Channel\nCheck my buttons below to know more..\n"
     client.send_photo(message.chat.id,
         photo="https://telegra.ph/file/c91e170af27dead097415.jpg",
         caption=Ytdl_Bot,  
@@ -91,7 +91,8 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep =f"✒ Title : {title[:35]}\n✒ Duration : {duration} \n✒ Uploaded By : "
+
+        rep =f"⎆ Title : {title[:35]}\n⎆ Duration : {duration} \n ⎆ Uploaded By : Katy Bot "
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
