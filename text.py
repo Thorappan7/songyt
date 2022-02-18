@@ -9,28 +9,29 @@ class Text (object):
 <b>👽 Creator</b> : <b><a href="https://t.me/thorappan_bots">Thorappan 🧙‍♂</b></a>
 <b>⌨️ Language</b> : <code>Python3 📇</code>
 <b>📟 Library</b> : <a href="https://docs.pyrogram.org">Pyrogram  </a>
-<b>💵 Source Code</b> : <a href="https://telegra.ph/file/85f5432b72264822bd051.jpg">🏃 Source Code</a>
 """
 
     HELP_TXT = """ <b>HELP TEXT</b> 
 
-Hey friends, its very easy to request music ! ( This command works only in group )
-just send me /song and [song name] like this, then bot will replay an example below..!
+Hey {}, its very easy to request music !
 
-<code>/song darshana </code>
+➙ This command works only in group 
+➙ just send me /song [song name] or /song [ YouTube link ]
+
+➙ Eg :<code>/song darshana </code>
 
 """
     REP_TXT = """✒ Title : {title[:35]}\n✒ Duration : {duration} \n✒ Uploaded By : <a href="https://t.me/katy_perry_musicbot"> Katy Perry </a>
 """
        
     EG_TXT = """
-Examples 
-==========================
+            Examples 
+====================================
 
-/song darshana Hridayam
-/song alone marshmallow
-/song Arabic Kuthu
-/song thee minnal
+  /song darshana Hridayam
+  /song alone marshmallow
+  /song Arabic Kuthu
+  /song https://www.youtube.com....
 
-==========================
+====================================
 """
