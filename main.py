@@ -6,6 +6,7 @@ from youtube_search import YoutubeSearch
 import requests
 import yt_dlp
 from yt_dlp import YoutubeDL
+from text import Text
 
 import os
 from Config import Config
@@ -32,8 +33,11 @@ def start(client, message):
         parse_mode='html',
         reply_markup=InlineKeyboardMarkup(
             [[
-              InlineKeyboardButton('Channel 👬', url='https://t.me/Malayalam_Music'),
-              InlineKeyboardButton('Group 🤗', url='https://t.me/Malayalam_Musics')
+            InlineKeyboardButton("Help", callback_data="help"),
+            InlineKeyboardButton("About", callback_data="about")
+            ],[
+            InlineKeyboardButton("Channel", url="https://t.me/Malayalam_music),
+            InlineKeyboardButton("Close", callback_data="close_data")
             ]]
         )
     )
@@ -111,6 +115,35 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+@bot.on_callback_query()
+async def cb_handler(client, query):
+    if query.data == "close_data":
+        await query.message.delete()
+
+    elif query.data == "start":
+        button = [[
+            InlineKeyboardButton("Help", callback_data="help"),
+            InlineKeyboardButton("About", callback_data="about")
+        ],[
+            InlineKeyboardButton("Channel", url="https://t.me/Malayalam_music),
+            InlineKeyboardButton("Close", callback_data="close_data")
+        ]]
+        await query.message.edit_text(Text.START_TXT.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(button))
+    
+    elif query.data == "help":
+        button = [[
+            InlineKeyboardButton("Home", callback_data="start"),
+            InlineKeyboardButton("About", callback_data="about")
+        ]]
+        await query.message.edit_text(Text.HELP_TXT.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(button))
+
+    elif query.data == "about":
+        button = [[
+            InlineKeyboardButton("Home", callback_data="start"),
+            InlineKeyboardButton("Back", callback_data="help")
+        ]]
+        await query.message.edit_text(Text.ABOUT_TXT.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(button))
 
 
 bot.run()
