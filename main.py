@@ -44,16 +44,7 @@ def a(client, message):
         query += ' ' + str(i)
     print(query)
     m = message.reply("Searching..🧐")
-    ydl_opts = {
-        "yt-dlp",
-        "-c",
-        "--prefer-ffmpeg",
-        "--extract-audio",
-        "--audio-format",
-        "mp3",
-        "--audio-quality",
-        "320K"
-         }
+    ydl_opts = {"format": "mp3"}
     try:
         results = []
         count = 0
