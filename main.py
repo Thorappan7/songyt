@@ -87,7 +87,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"• Title[{title[:35]}]\n• Duration :{duration} \n•Upload By : @Malayalam_Music)"
+        rep = f"☼ Title : {title[:35]}\n☼ Duration : {duration} \n☼ Upload By : @Malayalam_Music"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -103,7 +103,7 @@ def a(client, message):
         )
         m.delete()
     except Exception as e:
-        m.edit("❌ Error Contact support Group") 
+        m.edit("❌ Error Contact Admin") 
         print(e)
 
     try:
