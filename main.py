@@ -52,11 +52,7 @@ def a(client, message):
         "--audio-format",
         "mp3",
         "--audio-quality",
-        "320K",
-        format_id,
-        "-o",
-        filepath,
-        yturl,
+        "320K"
     ]
     try:
         results = []
