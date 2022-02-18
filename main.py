@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 
-import youtube_dl,time
+import youtube_dl,time, ffmpeg
 from youtube_search import YoutubeSearch
 import requests
 import yt_dlp
@@ -44,7 +44,7 @@ def a(client, message):
         query += ' ' + str(i)
     print(query)
     m = message.reply("Searching..🧐")
-    ydl_opts = {"format": "bestaudio[acodec=mp3]"}
+    ydl_opts = {"format": "bestaudio" :"extract-audio":"audio-format mp3":"audio-quality 320K":"output"}
     try:
         results = []
         count = 0
