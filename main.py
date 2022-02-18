@@ -41,7 +41,7 @@ def start(client, message):
             ]]
         )
     )
-@bot.on_message(filters.command(['song']))
+@bot.on_message(filters.command("song") & filters.group)
 def a(client, message):
     query = ''
     for i in message.command[1:]:
