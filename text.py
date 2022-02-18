@@ -20,3 +20,6 @@ just send me /song and [song name] like this, then bot will replay an example be
 <code>/song darshana </code>
 
 """
+    REP_TXT = """✒ Title : {title[:35]}\n✒ Duration : {duration} \n✒ Uploaded By : <a href="https://t.me/katy_perry_musicbot"> Katy Perry </a>
+"""
+       
