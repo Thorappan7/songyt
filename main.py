@@ -64,7 +64,7 @@ def a(client, message):
             title = results[0]["title"]
             thumbnail = results[0]["thumbnails"][0]
             duration = results[0]["duration"]
-            katy = "<a href=https://t.me/katy_perry_musicbot>Katy Perry</a>"
+            katy = "[Katy Perry](https://t.me/katy_perry_musicbot)"
 
             #UNCOMMENT THIS IF YOU WANT A LIMIT ON DURATION. CHANGE 1800 TO YOUR OWN PREFFERED DURATION AND EDIT THE MESSAGE (30 minutes cap) LIMIT IN SECONDS
             if time_to_seconds(duration) >= 1800:  # duration limit
@@ -93,7 +93,7 @@ def a(client, message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
 
-        rep =f"⎆ Title : {title[:45]}\n⎆ Duration : {duration} \n⎆ Uploaded By : {katy}\n⎆ Requested by :{message.from_user.username}"
+        rep =f"⎆ Title : {title[:45]}\n⎆ Duration : {duration} \n⎆ Uploaded By : {katy}\n⎆ Requested by :{user.mention(style="md")}"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -103,7 +103,7 @@ def a(client, message):
             audio_file,
             caption=rep,
             thumb=thumb_name,
-            parse_mode="html",
+            parse_mode="markdown",
             title=title,
             duration=dur
         )
