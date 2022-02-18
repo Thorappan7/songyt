@@ -139,6 +139,8 @@ async def cb_handler(client, query):
         button = [[
             InlineKeyboardButton("Home", callback_data="start"),
             InlineKeyboardButton("About", callback_data="about")
+            ],[
+            InlineKeyboardButton("Examples", callback_data="eg")
         ]]
         await query.message.edit_text(Text.HELP_TXT.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(button))
 
@@ -149,5 +151,7 @@ async def cb_handler(client, query):
         ]]
         await query.message.edit_text(Text.ABOUT_TXT.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(button))
 
+    elif query.data == "eg":
+        await query.answer(text=Text.EG_TXT, show_alert=True)
 
 bot.run()
