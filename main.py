@@ -91,6 +91,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
+        rep ="✒ Title : {title[:35]}\n✒ Duration : {duration} \n✒ Uploaded By : <a href="https://t.me/katy_perry_musicbot"> Katy Perry </a>"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -98,10 +99,10 @@ def a(client, message):
         m.edit("Uploading..📤")
         message.reply_audio(
             audio_file,
-            caption=Text.REP_TXT.format(message.from_user.mention),
+            caption=rep.format(message.from_user.mention),
             thumb=thumb_name,
             parse_mode="md",
-            title=results[0]["title"],
+            title=title,
             duration=dur
         )
         m.delete()
