@@ -95,7 +95,7 @@ def a(client, message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
 
-        rep =f"⎆ Title : {title[:45]}\n⎆ Duration : {duration} \n⎆ Uploaded By : {katy}\n⎆ Requested by :{message.from_user.username}"
+        rep =f"⎆ Title : {title[:45]}\n⎆ Duration : {duration} \n⎆ Uploaded By : {katy}\n⎆ Reqstd by :@{message.from_user.username}"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
