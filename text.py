@@ -5,10 +5,11 @@ class Text (object):
    """
 
     ABOUT_TXT = """
-<b>🧑‍🎤 Name</b> : <code> Katy Perry </code>   
-<b>👽 Creator</b> : <b><a href="https://t.me/thorappan_bots">Thorappan 🧙‍♂</b></a>
-<b>⌨️ Language</b> : <code>Python3 📇</code>
-<b>📟 Library</b> : <a href="https://docs.pyrogram.org">Pyrogram  </a>
+➙ Name : <code> Katy Perry </code>   
+
+➙ Creator : <a href="https://t.me/rayner74">Rayner74</a>
+➙ Language : <code>Python3 </code>
+➙ Library : <a href="https://docs.pyrogram.org">Pyrogram </a>
 """
 
     HELP_TXT = """ <b>HELP TEXT</b> 
@@ -20,7 +21,7 @@ Hey {}, its very easy to request music..!
    /song [ YouTube link ]
 
 ➙ Eg :<code>/song darshana </code>
-      <code>/song www.youtube.com/... </code>
+       <code>/song www.youtube.com/... </code>
 
 """
     REP_TXT = """✒ Title : {title[:35]}\n✒ Duration : {duration} \n✒ Uploaded By : <a href="https://t.me/katy_perry_musicbot"> Katy Perry </a>
@@ -28,10 +29,10 @@ Hey {}, its very easy to request music..!
        
     EG_TXT = """
            Examples 
-=================================
-  /song darshana Hridayam
-  /song alone marshmallow
-  /song Arabic Kuthu
-  /song https://www.youtube.com..
-=================================
+===============================
+➙ /song darshana Hridayam
+➙ /song alone marshmallow
+➙ /song Arabic Kuthu
+➙ /song https://www.youtube.com..
+===============================
 """
