@@ -102,7 +102,7 @@ def a(client, message):
             thumb=thumb_name,
             parse_mode="md",
             title=title,
-            duration=dur,
+            duration=dur
         )
         m.delete()
     except Exception as e:
