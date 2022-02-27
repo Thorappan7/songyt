@@ -47,7 +47,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply("Searching..🧐")
+    m = message.reply("Searching..🎧")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -70,7 +70,7 @@ def a(client, message):
 
             #UNCOMMENT THIS IF YOU WANT A LIMIT ON DURATION. CHANGE 1800 TO YOUR OWN PREFFERED DURATION AND EDIT THE MESSAGE (30 minutes cap) LIMIT IN SECONDS
             if time_to_seconds(duration) >= 1800:  # duration limit
-                m.edit("Exceeded 30mins cap")
+                m.edit("Duration more than 30 miniutes sorry I can't upload that song")
                 return
 
             views = results[0]["views"]
@@ -95,7 +95,7 @@ def a(client, message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
 
-        rep =f"⎆ Title : {title[:45]}\n⎆ Duration : {duration} \n⎆ Uploaded By : {katy}\n⎆ Reqstd by :@{message.from_user.username}"
+        rep =f"⎆ Title : {title[:45]}\n⎆ Duration : {duration} \n⎆ Uploaded By : {katy}\n⎆ Reqstd by :{message.from_user.first_name}"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
